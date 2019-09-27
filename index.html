@@ -5,16 +5,24 @@
     <meta charset="UTF-8">
     <title>Rock Paper Scissors Part 2
     </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div id="game">
-        <p>
-            The computer chooses <strong id="computerRandom">"..."</strong>
-        </p>
+    <div class="jumbotron">
+        <h3>
+            Let's play Rock Paper Scissors!! 
+        </h3>
+        <br>
+        <h6>Challenge the computer by pressing r for rock, p for paper, s for scissors!</h6>
+        <br>
         <p>
             The user chooses <strong id="userPick">"..."</strong>
+        </p>
+        <p>
+            The computer chooses <strong id="computerRandom">"..."</strong>
         </p>
         <p>
             Wins: <strong id="wins">0</strong>
@@ -41,15 +49,40 @@
             userGuess.textContent = event.key;
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             computerInput.textContent = computerGuess;
-            if (event.key === computerGuess) {
+            if (event.key == computerGuess) {
                 teyScore = teyScore + 1;
                 tey.textContent = teyScore;
             };
-
-
-
+            if (event.key == "r" && computerGuess == "p") {
+                nayScore = nayScore + 1;
+                nay.textContent = nayScore;
+            };
+            if (event.key == "r" && computerGuess == "s") {
+                yayScore = yayScore + 1;
+                yay.textContent = yayScore;
+            };
+            if (event.key == "p" && computerGuess == "s") {
+                nayScore = nayScore + 1;
+                nay.textContent = nayScore;
+            };
+            if (event.key == "p" && computerGuess == "r") {
+                yayScore = yayScore + 1;
+                yay.textContent = yayScore;
+            };
+            if (event.key == "s" && computerGuess == "r") {
+                nayScore = nayScore + 1;
+                nay.textContent = nayScore;
+            };
+            if (event.key == "s" && computerGuess == "p") {
+                yayScore = yayScore + 1;
+                yay.textContent = yayScore;
+            };
 
         };
+
+
+
+
 
 
 
