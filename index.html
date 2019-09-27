@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2
+    </title>
+</head>
+
+<body>
+
+    <div id="game">
+        <p>
+            The computer chooses <strong id="computerRandom">"..."</strong>
+        </p>
+        <p>
+            The user chooses <strong id="userPick">"..."</strong>
+        </p>
+        <p>
+            Wins: <strong id="wins">0</strong>
+        </p>
+        <p>
+            Losses: <strong id="loss">0</strong>
+        </p>
+        <p>
+            Ties: <strong id="tie">0</strong>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var userGuess = document.getElementById("userPick");
+        var computerInput = document.getElementById("computerRandom");
+        var yay = document.getElementById("wins");
+        var nay = document.getElementById("loss");
+        var tey = document.getElementById("tie");
+        var computerChoices = ["r", "p", "s"];
+
+        document.onkeyup = function (event) {
+            userGuess.textContent = event.key;
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            computerInput.textContent = computerGuess;
+            if (event.key === computerGuess) {
+                var teyScore = 0;
+                tey.textContent = teyScore++;
+            }
+
+
+        };
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
