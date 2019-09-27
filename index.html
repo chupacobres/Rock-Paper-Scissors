@@ -34,15 +34,19 @@
         var nay = document.getElementById("loss");
         var tey = document.getElementById("tie");
         var computerChoices = ["r", "p", "s"];
-
+        var teyScore = 0;
+        var yayScore = 0;
+        var nayScore = 0;
         document.onkeyup = function (event) {
             userGuess.textContent = event.key;
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
             computerInput.textContent = computerGuess;
             if (event.key === computerGuess) {
-                var teyScore = 0;
-                tey.textContent = teyScore++;
-            }
+                teyScore = teyScore + 1;
+                tey.textContent = teyScore;
+            };
+
+
 
 
         };
